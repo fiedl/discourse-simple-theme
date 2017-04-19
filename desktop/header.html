@@ -28,7 +28,7 @@
   {{number topic.like_count}} <i class='fa fa-heart'></i>
 </td>
 {{/if}}
-   
+
 {{#if controller.showOpLikes}}
 <td class="num likes">
   {{number topic.op_like_count}} <i class='fa fa-heart'></i>
@@ -52,7 +52,7 @@ von <span class='editor'><a href="/users/{{topic.last_poster_username}}" data-au
 
 <script type='text/x-handlebars' data-template-name='topic-list-header.raw'>
   {{raw "topic-list-header-column" order='posts' name='topic.title'}}
-  
+
   {{#if showLikes}}
      {{raw "topic-list-header-column" sortable='true' order='likes' number='true' forceName='Likes'}}
   {{/if}}
@@ -77,7 +77,7 @@ TopicListItemView.reopen({
                 this.get('topic.category.name') !== 'uncategorized';
     }.property()
 });
-   
+
 })();
- 
+
 </script>
