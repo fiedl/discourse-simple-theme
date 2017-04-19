@@ -42,10 +42,10 @@
 <a href="{{topic.lastPostUr}}" data-user-card="{{topic.last_poster_username}}">{{avatar topic.lastPoster usernamePath="username" imageSize="medium"}}</a>
 </div>
 <div class='poster-info'>
+von <span class='editor'><a href="/users/{{topic.last_poster_username}}" data-auto-route="true" data-user-card="{{topic.last_poster_username}}">{{topic.last_poster_username}}</a></span>
 <a href="{{topic.lastPostUrl}}">
 {{format-date topic.bumpedAt format="tiny"}}
 </a>
-<span class='editor'><a href="/users/{{topic.last_poster_username}}" data-auto-route="true" data-user-card="{{topic.last_poster_username}}">{{topic.last_poster_username}}</a></span>
 </div>
 </td>
 </script>
