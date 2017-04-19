@@ -11,14 +11,14 @@
 
   {{raw "list/topic-excerpt" topic=model}}
   <div class='creator'>
-  {{#if showCategory}}
-     {{category-link topic.category}}
-   {{/if}}
   {{~#if topic.creator ~}}
-  <a href="/users/{{topic.creator.username}}" data-auto-route="true" data-user-card="{{topic.creator.username}}">{{topic.creator.username}}</a> <a href={{topic.url}}>{{format-date topic.createdAt format="tiny"}}</a>
+  von <a href="/users/{{topic.creator.username}}" data-auto-route="true" data-user-card="{{topic.creator.username}}">{{topic.creator.username}}</a> <a href={{topic.url}}>{{format-date topic.createdAt format="tiny"}}</a>
   {{~/if ~}}
-   {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
-   </div>
+  {{#if showCategory}}
+    {{category-link topic.category}}
+  {{/if}}
+  {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
+  </div>
 </td>
 
 
@@ -42,10 +42,10 @@
 <a href="{{topic.lastPostUr}}" data-user-card="{{topic.last_poster_username}}">{{avatar topic.lastPoster usernamePath="username" imageSize="medium"}}</a>
 </div>
 <div class='poster-info'>
-von <span class='editor'><a href="/users/{{topic.last_poster_username}}" data-auto-route="true" data-user-card="{{topic.last_poster_username}}">{{topic.last_poster_username}}</a></span>
 <a href="{{topic.lastPostUrl}}">
 {{format-date topic.bumpedAt format="tiny"}}
 </a>
+<span class='editor'><a href="/users/{{topic.last_poster_username}}" data-auto-route="true" data-user-card="{{topic.last_poster_username}}">{{topic.last_poster_username}}</a></span>
 </div>
 </td>
 </script>
